@@ -6,7 +6,23 @@
 
 minimum:
     # Hier MIPS-Code ergaenzen
-        
+    li $t0, 1 #t0 = 1 = i
+    lw $t1, n #t1 = n
+    
+    #load A[0]
+    lw $v0, array #min = a[0]
+for: 
+    bge $t0, $t1, endfor
+    sll $t4, $t0, 2 #load A[i]
+    add $t4, $a0, $t4
+    lw $t4, 0($t4) # t4 = A[i]
+    bge $t4, $v0, endif #if(a[i] >= min)
+    move $v0, $t4
+endif:
+    addi $t0, $t0, 1 #i++
+    j for
+     
+endfor:  
     jr    $ra                # return
 
 
