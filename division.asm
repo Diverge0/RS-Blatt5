@@ -1,15 +1,12 @@
-# Verwendung der Register
+# By Robert, Mahjoub, Henning
 # $a0 .. Parameter: x
 # $a1 .. Parameter: y
 # $v0 .. Rueckgabewert: result
 # $t0 .. increment
-# ... (weitere ergaenzen)
 
 division:
-    # Hier MIPS-Code ergaenzen
 	add $v0, $zero, $zero #result = 0
 	li $t0, 1 #increment = 1
-	
 	bge $a0, $zero, endif1 #if (x<0)
 	nor $t0, $t0, $zero #increment = -increment
 	addi $t0, $t0, 1
@@ -28,7 +25,6 @@ endif2:
 	j endif2
 endwhile:
 	jr   $ra               # return (result in $v0)
-
 
 #
 # Testdaten. Zur Kontrolle: Ergebnis sollte -8 sein.

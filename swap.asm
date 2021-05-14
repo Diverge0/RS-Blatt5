@@ -1,4 +1,4 @@
-# Verwendung der Register
+# By Robert, Mahjoub, Henning
 # $a0 .. Parameter: Adresse des Arrays im Speicher
 # $a1 .. Parameter: i
 # $a2 .. Parameter: j
@@ -6,10 +6,8 @@
 # $t1 .. temp
 # $t2 .. &table[j]
 # $t3 .. table[j]
-# ... (weitere ergaenzen)
 
 swap:
-    # Hier MIPS-Code ergaenzen
     sll $t0, $a1, 2 #load table[i]
     add $t0, $a0, $t0 #t0 = &table[i]
     sll $t2, $a2, 2 #load table[j]
@@ -21,7 +19,6 @@ swap:
     sw $t1, 0($t2) #table[j] = table[i]
     
     jr   $ra              # return
-
 
 #
 # Testdaten. Zur Kontrolle: Ergebnis sollte 0623451789 sein.

@@ -1,11 +1,9 @@
-# Verwendung der Register:
+# By Mahjoub, Robert, Henning
 # $a0: Array-Adresse (Parameter a)
 # $a1: Array-Laenge (Paramter n)
 # $v0: Rueckgabewert
-# ... (weitere ergaenzen)
 
 minimum:
-    # Hier MIPS-Code ergaenzen
     li $t0, 1 #t0 = 1 = i
     lw $t1, n #t1 = n
     
@@ -24,7 +22,6 @@ endif:
      
 endfor:  
     jr    $ra                # return
-
 
 #
 # Testdaten. Zur Kontrolle: Ergebnis sollte -574 sein.

@@ -1,4 +1,4 @@
-# Verwendung der Register
+# By Mahjoub, Robert, Henning
 # $a0 .. Parameter Adresse des Arrays im Speicher
 # $a1 .. Parameter Anzahl der Elemente im Array
 # $t0 .. i
@@ -7,10 +7,8 @@
 # $s0 .. temp
 # $s2 .. &a[i]
 # $s3 .. $a[j]
-# ... (weitere ergaenzen)
 
 foo:
-    # Hier MIPS-Code ergaenzen
     add $t0, $zero, $zero # i = 0
 fori:
     bge $t0, $a1, endfori
@@ -32,7 +30,6 @@ endforj:
     j fori
 endfori:
     jr    $ra            # return (j=n in $v0)
-
 
 #
 # Testdaten. Zur Kontrolle: Ergebnis sollte 55425914819 sein.
