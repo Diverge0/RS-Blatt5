@@ -2,11 +2,24 @@
 # $a0 .. Parameter: Adresse des Arrays im Speicher
 # $a1 .. Parameter: i
 # $a2 .. Parameter: j
+# $t0 .. &table[i]
+# $t1 .. temp
+# $t2 .. &table[j]
+# $t3 .. table[j]
 # ... (weitere ergaenzen)
 
 swap:
     # Hier MIPS-Code ergaenzen
-
+    sll $t0, $a1, 2 #load table[i]
+    add $t0, $a0, $t0 #t0 = &table[i]
+    sll $t2, $a2, 2 #load table[j]
+    add $t2, $a0, $t2 #t2 = &table[j]
+    
+    lw $t1, 0($t0) #temp = table[i]:
+    lw $t3, 0($t2) #t3 = table[j]
+    sw $t3, 0($t0) #table[i] = table[j]
+    sw $t1, 0($t2) #table[j] = table[i]
+    
     jr   $ra              # return
 
 
