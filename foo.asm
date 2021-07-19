@@ -7,6 +7,7 @@
 # $s0 .. temp
 # $s2 .. &a[i]
 # $s3 .. $a[j]
+# Bä
 
 foo:
     add $t0, $zero, $zero # i = 0
